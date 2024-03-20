@@ -11,7 +11,8 @@ if (env.VITE_ENABLED_API_DELAY) {
   api.interceptors.request.use(async (config) => {
     // Simulate API delay
     // config -> request config like headers, body, etc
-    await new Promise((resolve) => setTimeout(resolve, 2000))
+    // await new Promise((resolve) => setTimeout(resolve, 2000))
+    await new Promise((resolve) => setTimeout(resolve, Math.random() * 3000))
 
     return config
   })
